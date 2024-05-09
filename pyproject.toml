@@ -1,0 +1,39 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=67.0",
+  "setuptools_scm[toml]>=7.1"
+]
+
+[project]
+authors = [{"name" = "Thomas Germain"}]
+description = "A photos/videos sorter utility tool"
+keywords = ["exif", "exiftool", "sorter", "photos", "videos"]
+dynamic = ["version"]
+license = {"file" = "LICENSE"}
+name = "lucie-py"
+readme = {file = "README.md", content-type = "text/markdown"}
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Utility tool",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
+]
+requires-python = ">= 3.10"
+dependencies = [
+  "pyexiftool==0.5.6"
+]
+
+[project.optional-dependencies]
+build = [
+  "black==24.4.2",
+  "pytest==8.2.0",
+  "ruff==0.4.3",
+  "toml-sort==0.23.1",
+  "mypy==1.10.0"
+]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}

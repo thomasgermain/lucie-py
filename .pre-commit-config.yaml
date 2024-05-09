@@ -1,0 +1,18 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+      - id: ruff
+        name: ruff
+        entry: ruff format
+      - id: black
+        name: black
+        entry: black --fast -l 100 luciepy tests *py
+      - id: mypy
+        name: mypy
+        entry: mypy --strict luciepy tests
+      - id: tomlsort
+        name: tomlsort
+        entry: toml-sort ./pyproject.toml -i
