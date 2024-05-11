@@ -9,4 +9,4 @@ if __name__ == "__main__":
         print(f"Metadata for file {m['File:FileName']}")
         print(f"FileSize: {m['File:FileSize']}")
         print(f"Creation time: {m['EXIF:DateTimeOriginal']}")
-        print("---")
+        print("----")

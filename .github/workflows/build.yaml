@@ -25,13 +25,13 @@ jobs:
         run: pip install . && pip install .[build]
 
       - name: Black
-        run: black --check --fast -l 100 luciepy tests *py
-
-      - name: Ruff
-        run: ruff check
+        run: black --check --fast luciepy tests
 
       - name: Mypy
         run: mypy --strict luciepy tests
+
+      - name: Flake8
+        run: flake8 luciepy tests
 
       - name: Toml-sort
         run: toml-sort ./pyproject.toml --check

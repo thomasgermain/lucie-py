@@ -4,15 +4,25 @@ repos:
       - id: pytest
         name: pytest
         entry: pytest
-      - id: ruff
-        name: ruff
-        entry: ruff format
+        language: python
+        pass_filenames: false
       - id: black
         name: black
-        entry: black --fast -l 100 luciepy tests *py
+        entry: black --fast -l 100 luciepy tests
+        language: python
+        pass_filenames: false
       - id: mypy
         name: mypy
         entry: mypy --strict luciepy tests
+        language: python
+        pass_filenames: false
+      - id: flake8
+        name: Flake8
+        entry: flake8 luciepy tests
+        language: python
+        pass_filenames: false
       - id: tomlsort
         name: tomlsort
         entry: toml-sort ./pyproject.toml -i
+        language: python
+        pass_filenames: false
