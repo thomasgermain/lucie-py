@@ -37,7 +37,7 @@ jobs:
         run: toml-sort ./pyproject.toml --check
 
       - name: Test & coverage
-        run: coverage run --source=luciepy  pytest
+        run: coverage run -m pytest
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v4
